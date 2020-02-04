@@ -15,6 +15,7 @@ public class FloatsCharsDoublesShorts {
 		short myShort = 239;
 		short shortMax = Short.MAX_VALUE;
 		char myChar = 'M';
+		boolean myBool = true;
 
 		System.out.println("My int: " + myInt);
 		System.out.println("My byte: " + myByte);
@@ -22,6 +23,7 @@ public class FloatsCharsDoublesShorts {
 		System.out.println("My double: " + myDouble);
 		System.out.println("My short: " + myShort);
 		System.out.println("My char: " + myChar);
+		System.out.println("My boolean: " + myBool);
 
 		System.out.println("Integers (int) goes to " + intMax + ".");
 		System.out.println("Bytes go to " + byteMax + ".");
