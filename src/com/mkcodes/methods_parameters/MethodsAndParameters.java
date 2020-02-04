@@ -12,7 +12,7 @@ public class MethodsAndParameters {
 	public static void myName(String myName) {
 		System.out.println(myName);
 	}
-
+	// TODO Auto-generated method stub
 	public static void addNums(int a, int b) {
 		System.out.println(a + b);
 	}
