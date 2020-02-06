@@ -9,6 +9,12 @@ public class Main {
 
 		System.out.println("My ball, " + myBall.getName() + ", is " + myBall.getColour() + ".");
 		System.out.println("The other ball, " + secondBall.getName() + ", is " + secondBall.getColour() + ".");
+
+		Basketball basketball = new Basketball();
+		basketball.bounce();
+
+		Baseball baseball = new Baseball();
+		baseball.deflate();
 	}
 
 }
