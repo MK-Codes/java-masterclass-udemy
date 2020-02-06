@@ -1,4 +1,4 @@
-package com.mkcodes.classes_objects_access_control_constructors;
+package com.mkcodes.classes_objects_access_control_constructors_getters_setters;
 
 public class Ball {
 
@@ -25,7 +25,7 @@ public class Ball {
 	}
 
 	public void inflate() {
-		System.out.println("Inflating...d");
+		System.out.println("Inflating...");
 	}
 
 	public String getColour() {
