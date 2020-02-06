@@ -8,11 +8,25 @@ public class Ball {
 	private int bounceRate;
 	private int capacity;
 
-	public Ball(String colour, String name, int capacity, int bounceRate) {
-		this.colour = colour;
-		this.name = name;
-		this.capacity = capacity;
-		this.bounceRate = bounceRate;
+	public Ball() {
+	}
+
+	public Ball(String mColour, String mName, int mCapacity, int mBounceRate) {
+		colour = mColour;
+		name = mName;
+		capacity = mCapacity;
+		bounceRate = mBounceRate;
+	}
+
+	public Ball(String mColour, String mName) {
+		colour = mColour;
+		name = mName;
+	}
+
+	public Ball(String mColour, String mName, int mCapacity) {
+		colour = mColour;
+		name = mName;
+		capacity = mCapacity;
 	}
 
 	// Behaviours
