@@ -12,9 +12,12 @@ public class Main {
 
 		Basketball basketball = new Basketball();
 		basketball.bounce();
+		basketball.setIsNBA(true);
 
 		Baseball baseball = new Baseball();
 		baseball.deflate();
+
+		System.out.println(basketball.isNBA());
 	}
 
 }
