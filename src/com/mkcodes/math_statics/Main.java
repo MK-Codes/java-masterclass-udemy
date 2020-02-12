@@ -18,7 +18,7 @@ public class Main {
 
 		Main main = new Main();
 		main.setName("FJFJ");
-		System.out.println(main.name);
+		System.out.println(main.name); // should be referenced statically too
 	}
 
 	public void setName(String n) {
