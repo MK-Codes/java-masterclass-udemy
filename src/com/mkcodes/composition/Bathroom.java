@@ -1,3 +1,4 @@
+
 package com.mkcodes.composition;
 
 public class Bathroom {
@@ -17,5 +18,9 @@ public class Bathroom {
 
 	public int getTubSize() {
 		return bathtub.getSize();
+	}
+
+	public int getNoOfSinks() {
+		return noOfSinks;
 	}
 }
