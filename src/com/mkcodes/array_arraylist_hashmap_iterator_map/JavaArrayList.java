@@ -1,4 +1,4 @@
-package com.mkcodes.array_arraylist_hashmap;
+package com.mkcodes.array_arraylist_hashmap_iterator_map;
 
 import java.util.ArrayList;
 
