@@ -25,7 +25,7 @@ public class IntroEnums {
 
 		// using enums
 
-		selectedPerson = Members.BOBBY;
+		selectedPerson = Members.BOBBY; // selectedPerson can only be a value from Members enum
 
 		if (selectedPerson.equals(Members.BOBBY)) {
 			System.out.println("Bobby");
