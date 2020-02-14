@@ -2,7 +2,7 @@ package com.mkcodes.iostreams;
 
 import java.io.IOException;
 
-public class ReadInputs {
+public class ReadInputsFromCmdLine {
 
 	public static void main(String[] args) throws IOException {
 
