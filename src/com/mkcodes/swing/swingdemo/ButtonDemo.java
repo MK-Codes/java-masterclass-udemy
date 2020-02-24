@@ -58,6 +58,7 @@ public class ButtonDemo implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		// Respond to click - getActionCommand = what you instantiate the JButton with
+		// (or by using the .setActionCommand() function)
 		if (e.getActionCommand().equals("Up")) {
 			label.setText("Moving up.");
 		} else if (e.getActionCommand().equals("Down")) {
