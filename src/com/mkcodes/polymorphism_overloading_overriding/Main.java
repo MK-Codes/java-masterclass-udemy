@@ -11,7 +11,7 @@ public class Main {
 		myDog.makeSound("Woof", "loudly!");
 
 		myDog.move();
-		
+
 		Vet myVet = new Vet();
 		Cat myCat = new Cat();
 		myVet.giveShot(myCat);
