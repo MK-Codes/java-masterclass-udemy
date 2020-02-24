@@ -1,6 +1,7 @@
 package com.mkcodes.swing.swingdemo;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
 public class SwingDemo {
@@ -18,6 +19,12 @@ public class SwingDemo {
 
 		// Show it!
 		jFrame.setVisible(true);
+
+		// Create a JLabel
+		JLabel jLabel = new JLabel("I see...");
+
+		// Put the label on jFrame
+		jFrame.add(jLabel);
 	}
 
 	public static void main(String[] args) {
