@@ -1,13 +1,15 @@
 package com.mkcodes.swing.swingdemo;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
-public class ButtonDemo {
+public class ButtonDemo implements ActionListener {
 
 	JLabel label;
 
@@ -24,13 +26,43 @@ public class ButtonDemo {
 
 		JButton upButton = new JButton("Up");
 		JButton downButton = new JButton("Down");
-		JButton leftButton = new JButton("Test");
+
+		// Without interface - new ActionListener() for each button? Too much work
+		/*
+		 * // Adding an action to our up button upButton.addActionListener(new
+		 * ActionListener() {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) {
+		 * System.out.println("Moving up."); } });
+		 * 
+		 * // Adding an action to our down button downButton.addActionListener(new
+		 * ActionListener() {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) {
+		 * System.out.println("Moving down."); } });
+		 */
+
+		// Now we've implemented ActionListener - much tidier
+
+		upButton.addActionListener(this);
+		downButton.addActionListener(this);
+
 		label = new JLabel("Oh, hi Mark!");
 		jFrame.add(upButton);
 		jFrame.add(downButton);
-		jFrame.add(leftButton);
 		jFrame.add(label);
 		jFrame.setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+
+		// Respond to click - getActionCommand = what you instantiate the JButton with
+		if (e.getActionCommand().equals("Up")) {
+			label.setText("Moving up.");
+		} else if (e.getActionCommand().equals("Down")) {
+			label.setText("Moving down.");
+		}
 	}
 
 	public static void main(String[] args) {
@@ -44,5 +76,4 @@ public class ButtonDemo {
 		});
 
 	}
-
 }
