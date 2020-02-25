@@ -4,9 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -99,7 +104,9 @@ public class FlashCardBuilder {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			System.out.println("Next clicked");
+			FlashCard card = new FlashCard(question.getText(), answer.getText());
+			cardList.add(card);
+			clearCard();
 		}
 
 	}
@@ -119,8 +126,41 @@ public class FlashCardBuilder {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			System.out.println("Save clicked");
+			FlashCard card = new FlashCard(question.getText(), answer.getText());
+			cardList.add(card);
+			JFileChooser fileSave = new JFileChooser();
+			fileSave.showSaveDialog(frame);
+			saveFile(fileSave.getSelectedFile());
 		}
 
+	}
+
+	public void clearCard() {
+		question.setText("");
+		answer.setText("");
+		question.requestFocus();
+	}
+
+	public void saveFile(File selectedFile) {
+
+		// Buffered Writer is more efficient than others
+		try {
+
+			BufferedWriter writer = new BufferedWriter(new FileWriter(selectedFile));
+
+			Iterator<FlashCard> cardIterator = cardList.iterator();
+
+			while (cardIterator.hasNext()) {
+				// Don't have to cast, but guarantees it will always be a FlashCard
+				FlashCard card = cardIterator.next();
+				// This could be done in a toString override in FlashCard, but I haven't learnt
+				// that yet
+				writer.write(card.getQuestion() + "/" + card.getAnswer() + "\n");
+			}
+			writer.close();
+		} catch (Exception e) {
+			System.out.println("Couldn't write file");
+			e.printStackTrace();
+		}
 	}
 }
