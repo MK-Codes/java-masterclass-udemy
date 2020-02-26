@@ -8,7 +8,7 @@ public class FlashCard {
 	public FlashCard(String q, String a) {
 
 		question = q;
-		answer = q;
+		answer = a;
 	}
 
 	public String getQuestion() {
