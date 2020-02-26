@@ -67,6 +67,8 @@ public class FlashCardBuilder {
 		mainPanel.add(aScrollPane);
 		mainPanel.add(nextButton);
 
+		cardList = new ArrayList<FlashCard>();
+
 		nextButton.addActionListener(new NextCardListener());
 
 		JMenuBar menuBar = new JMenuBar();
