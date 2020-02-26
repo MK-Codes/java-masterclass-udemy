@@ -60,7 +60,7 @@ public class FlashCardPlayer {
 		fileMenu.add(loadMenuItem);
 		menuBar.add(fileMenu);
 
-		frame.setMenuBar(menuBar);
+		frame.setJMenuBar(menuBar);
 		frame.getContentPane().add(BorderLayout.CENTER, mainPanel);
 		frame.setSize(640, 500);
 		frame.setVisible(true);
