@@ -1,4 +1,4 @@
-package com.mkcodes.swing.swingdemo;
+package com.mkcodes.swing;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;

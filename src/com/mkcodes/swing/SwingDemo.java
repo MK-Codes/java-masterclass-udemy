@@ -1,4 +1,4 @@
-package com.mkcodes.swing.swingdemo;
+package com.mkcodes.swing;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
