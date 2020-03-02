@@ -10,16 +10,34 @@ public class Main {
 		MyThread thread3 = new MyThread("Thread#03");
 		MyThread thread4 = new MyThread("Thread#04");
 
-		for (int i = 0; i < 50; i++) {
-			System.out.print(".");
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				System.out.println("Main thread interrupted");
-				e.printStackTrace();
-			}
+		try {
+			thread1.thread.join();
+			System.out.println("Child #1 joined"); // wait until specified thread ends
+			thread2.thread.join();
+			System.out.println("Child #2 joined");
+			thread3.thread.join();
+			System.out.println("Child #3 joined");
+			thread4.thread.join();
+			System.out.println("Child #4 joined");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
+
+		/*
+		 * do { System.out.print("."); try { Thread.sleep(100); } catch
+		 * (InterruptedException e) { System.out.print("Main thread interrupted");
+		 * e.printStackTrace(); } } while (thread1.thread.isAlive() ||
+		 * thread2.thread.isAlive() || thread3.thread.isAlive() ||
+		 * thread4.thread.isAlive());
+		 */
+
+		/*
+		 * for (int i = 0; i < 50; i++) { System.out.print("."); try {
+		 * Thread.sleep(100); } catch (InterruptedException e) { // TODO Auto-generated
+		 * catch block System.out.println("Main thread interrupted");
+		 * e.printStackTrace(); } }
+		 */
+
 		System.out.print("Main thread ending");
 
 //		Thread newThread = new Thread(thread);
