@@ -11,15 +11,19 @@ public class Main {
 		MyThread thread4 = new MyThread("Thread#04");
 
 		try {
-			thread1.thread.join();
-			System.out.println("Child #1 joined"); // wait until specified thread ends
-			thread2.thread.join();
-			System.out.println("Child #2 joined");
-			thread3.thread.join();
-			System.out.println("Child #3 joined");
-			thread4.thread.join();
-			System.out.println("Child #4 joined");
-		} catch (InterruptedException e) {
+			thread1.thread.setPriority(Thread.MIN_PRIORITY);
+			System.out.println("Child #1 priority: " + thread1.thread.getPriority());
+			thread2.thread.setPriority(Thread.NORM_PRIORITY);
+			System.out.println("Child #2 priority: " + thread2.thread.getPriority());
+			thread3.thread.setPriority(Thread.MAX_PRIORITY);
+			System.out.println(thread3.thread.getPriority());
+			/*
+			 * thread1.thread.join(); System.out.println("Child #1 joined"); // wait until
+			 * specified thread ends thread2.thread.join();
+			 * System.out.println("Child #2 joined"); thread3.thread.join();
+			 * System.out.println("Child #3 joined"); thread4.thread.join();
+			 * System.out.println("Child #4 joined");
+			 */ } catch (Exception e) {
 			e.printStackTrace();
 		}
 
