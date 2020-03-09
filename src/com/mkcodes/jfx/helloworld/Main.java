@@ -1,4 +1,4 @@
-package com.mkcodes.javafx.helloworld;
+package com.mkcodes.jfx.helloworld;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
