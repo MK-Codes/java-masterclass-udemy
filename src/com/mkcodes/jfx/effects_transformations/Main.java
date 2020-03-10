@@ -7,6 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
@@ -17,6 +18,8 @@ public class Main extends Application implements EventHandler {
 	private Button scaleButton;
 	private Rotate rotate;
 	private double angle;
+	private double blurVal;
+	private BoxBlur blur;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -37,7 +40,9 @@ public class Main extends Application implements EventHandler {
 		FlowPane root = new FlowPane(15, 15);
 		root.setAlignment(Pos.CENTER);
 		rotate = new Rotate();
+		blur = new BoxBlur(1.0, 1.0, 1);
 		angle = 0.0;
+		blurVal = 1.0;
 
 		root.getChildren().addAll(rotateButton, blurButton, scaleButton, reflect);
 
@@ -56,6 +61,20 @@ public class Main extends Application implements EventHandler {
 			rotate.setAngle(angle);
 			rotate.setPivotX(rotateButton.getWidth() / 2);
 			rotate.setPivotY(rotateButton.getHeight() / 2);
+		}
+		if (event.getSource().equals(blurButton)) {
+			// each time blur pressed,
+			if (blurVal == 10.0) {
+				blurVal = 1.0;
+				blurButton.setEffect(null);
+				blurButton.setText("Blur off");
+			} else {
+				blurVal++;
+				blurButton.setEffect(blur);
+				blurButton.setText("Blur on");
+			}
+			blur.setWidth(blurVal);
+			blur.setHeight(blurVal);
 		}
 	}
 
