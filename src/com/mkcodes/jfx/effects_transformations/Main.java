@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.transform.Rotate;
+import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 
 public class Main extends Application implements EventHandler {
@@ -20,6 +21,8 @@ public class Main extends Application implements EventHandler {
 	private double angle;
 	private double blurVal;
 	private BoxBlur blur;
+	private double scaleFactor;
+	private Scale scale;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -43,6 +46,8 @@ public class Main extends Application implements EventHandler {
 		blur = new BoxBlur(1.0, 1.0, 1);
 		angle = 0.0;
 		blurVal = 1.0;
+		scaleFactor = 0.4;
+		scale = new Scale(scaleFactor, scaleFactor);
 
 		root.getChildren().addAll(rotateButton, blurButton, scaleButton, reflect);
 
@@ -51,6 +56,7 @@ public class Main extends Application implements EventHandler {
 		primaryStage.show();
 
 		rotateButton.getTransforms().add(rotate);
+		scaleButton.getTransforms().add(scale);
 	}
 
 	@Override
@@ -75,6 +81,14 @@ public class Main extends Application implements EventHandler {
 			}
 			blur.setWidth(blurVal);
 			blur.setHeight(blurVal);
+		}
+		if (event.getSource().equals(scaleButton)) {
+			scaleFactor += 0.1;
+			if (scaleFactor > 2.0) {
+				scaleFactor = 0.4;
+			}
+			scale.setX(scaleFactor);
+			scale.setY(scaleFactor);
 		}
 	}
 
